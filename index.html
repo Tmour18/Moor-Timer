@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MoorTimer">
+  <meta name="application-name" content="MoorTimer">
+  <meta name="theme-color" content="#1C1C1C">
+  <meta name="color-scheme" content="dark">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="MoorTimer – Intervall-Timer, Tabata und Stoppuhr. Offline, ohne Werbung.">
+  <title>MoorTimer</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="app">
+    <main class="views">
+      <section class="view" id="view-tabata" data-tab="tabata" aria-label="Tabata"></section>
+      <section class="view" id="view-runden" data-tab="runden" aria-label="Runden"></section>
+      <section class="view" id="view-stoppuhr" data-tab="stoppuhr" aria-label="Stoppuhr"></section>
+      <section class="view" id="view-mehr" data-tab="mehr" aria-label="Mehr"></section>
+    </main>
+    <nav class="tabbar" id="tabbar" aria-label="Navigation">
+      <button class="tab" type="button" data-tab="tabata"><span class="ico" data-icon="tabata"></span>TABATA</button>
+      <button class="tab" type="button" data-tab="runden"><span class="ico" data-icon="runden"></span>RUNDEN</button>
+      <button class="tab" type="button" data-tab="stoppuhr"><span class="ico" data-icon="stoppuhr"></span>STOPPUHR</button>
+      <button class="tab" type="button" data-tab="mehr"><span class="ico" data-icon="mehr"></span>MEHR</button>
+    </nav>
+  </div>
+
+  <section class="run" id="run" hidden aria-live="polite">
+    <div class="run-top">
+      <div class="run-phase" id="run-phase">&nbsp;</div>
+      <div class="run-round" id="run-round">&nbsp;</div>
+    </div>
+    <div class="run-mid">
+      <div class="run-badge" id="run-badge">PAUSIERT</div>
+      <div class="run-time" id="run-time">00:00</div>
+      <div class="run-bar"><i id="run-bar"></i></div>
+      <div class="run-total">GESAMT <span id="run-total">00:00</span></div>
+      <div class="run-next" id="run-next">&nbsp;</div>
+      <button class="run-audio" id="run-audio" type="button" hidden><span class="ico" data-icon="sound"></span>TIPPEN FÜR SIGNALE</button>
+    </div>
+    <div class="run-controls">
+      <button class="cbtn" id="btn-stop" type="button"><span class="circle"><span class="ico" data-icon="stop"></span></span>STOPP</button>
+      <button class="cbtn big" id="btn-pause" type="button"><span class="circle" id="btn-pause-ico"></span><span id="btn-pause-label">PAUSE</span></button>
+      <button class="cbtn" id="btn-skip" type="button"><span class="circle"><span class="ico" data-icon="skip"></span></span>ÜBERSPRINGEN</button>
+    </div>
+    <div class="run-done" id="run-done" hidden>
+      <div class="done-title">FERTIG!</div>
+      <div class="done-name" id="done-name"></div>
+      <div class="done-time">GESAMTZEIT <span id="done-time">00:00</span></div>
+      <button class="start-btn dark" id="btn-close" type="button">SCHLIESSEN</button>
+    </div>
+  </section>
+
+  <div class="flash" id="flash"></div>
+  <noscript><p class="noscript">MoorTimer braucht JavaScript.</p></noscript>
+</body>
+</html>

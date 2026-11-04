@@ -1,0 +1,11 @@
+{
+  "name": "moor-timer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "MoorTimer – Intervall-Timer als PWA. Kein Build-Schritt; diese Datei dient nur den Node-Tests und dem Icon-Skript.",
+  "scripts": {
+    "test": "node tests/run-tests.mjs",
+    "icons": "node tools/make-icons.mjs"
+  }
+}
